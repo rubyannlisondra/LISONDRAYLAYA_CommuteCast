@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "996974772064",
+    "project_id": "commutecast-2099d",
+    "storage_bucket": "commutecast-2099d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:996974772064:android:da4b2bbb792e058cd02805",
+        "android_client_info": {
+          "package_name": "com.example.commutecast"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "996974772064-trtn7tr5dto7o8avseav4gj35vi995of.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAv5kxJHTNTLCNQZ88LWjluJOhnlfGFccI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "996974772064-trtn7tr5dto7o8avseav4gj35vi995of.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

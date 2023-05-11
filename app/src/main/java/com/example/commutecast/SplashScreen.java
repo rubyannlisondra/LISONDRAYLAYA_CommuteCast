@@ -28,7 +28,7 @@ public class SplashScreen extends AppCompatActivity {
                 } catch (Exception e) {
                     e.printStackTrace();
                 } finally {
-                    Intent intent = new Intent(SplashScreen.this, AccessLocation.class);
+                    Intent intent = new Intent(SplashScreen.this,Login.class);
                 }
 
             }
@@ -37,10 +37,9 @@ public class SplashScreen extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(SplashScreen.this,AccessLocation.class);
-                startActivity(intent);
-                finish();
+                startActivity(new Intent(getApplicationContext(),SignUp.class));
+
             }
-        },SPLASH_SCREEN);
+        },3500);
     }
 }
