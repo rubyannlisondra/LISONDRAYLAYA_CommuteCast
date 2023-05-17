@@ -38,7 +38,7 @@
         android:textSize="16sp" />
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/tvGeoLocation"
         android:layout_width="237dp"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -53,8 +53,8 @@
         android:textColorHint="#FFFFFF"
         android:textSize="24sp" />
 
-    <Button
-        android:id="@+id/button1"
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/skipBtn"
         android:layout_width="350dp"
         android:layout_height="60dp"
         android:layout_alignParentStart="false"
@@ -73,8 +73,8 @@
         android:textSize="18sp"
         android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/button2"
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/continueBtn"
         android:layout_width="350dp"
         android:layout_height="60dp"
         android:layout_alignParentStart="false"

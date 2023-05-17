@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         fAuth = FirebaseAuth.getInstance();
-        ImageButton logout = findViewById(R.id.logout);
+        /*ImageButton logout = findViewById(R.id.logout);
 
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,6 +89,6 @@ public class MainActivity extends AppCompatActivity {
                 fAuth.signOut();
                 startActivity(new Intent(getApplicationContext(),Login.class));
             }
-        });
+        });*/
     }
 }

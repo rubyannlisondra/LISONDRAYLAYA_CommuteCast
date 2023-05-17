@@ -1,14 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#1A1A1A"
     tools:context=".CreateAlarm">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/alarm"
+            android:layout_width="59dp"
+            android:layout_height="67dp"
+            android:backgroundTint="#1A1A1A"
+            android:contentDescription="Menu Button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.045"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.289"
+            app:srcCompat="@drawable/baseline_add_alert_24"
+            app:tint="#D4D4D4" />
+
+        <ImageView
+            android:id="@+id/volumeUp"
+            android:layout_width="59dp"
+            android:layout_height="67dp"
+            android:backgroundTint="#1A1A1A"
+            android:contentDescription="Menu Button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.045"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.174"
+            app:srcCompat="@drawable/baseline_volume_up_24"
+            app:tint="#D4D4D4" />
+
+        <EditText
+            android:id="@+id/searchBar"
+            android:layout_width="239dp"
+            android:layout_height="49dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/rounded_corner"
+            android:backgroundTint="#D4D4D4"
+            android:ems="10"
+            android:fontFamily="@font/dm_sans"
+            android:hint="search"
+            android:padding="10dp"
+            android:textAlignment="inherit"
+            android:textColor="#D2D2D2"
+            android:textColorHint="#00D2D2D2"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.781"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.046" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="106dp"
+            android:layout_height="23dp"
+            android:fontFamily="@font/dm_sans"
+            android:padding="2dp"
+            android:text="ALARM MODE"
+            android:textColor="#D2D2D2"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.052"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.076" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

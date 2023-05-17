@@ -1,14 +1,246 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#1A1A1A"
     tools:context=".Home">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Fragment Home" />
 
-</FrameLayout>
+
+    <TextView
+        android:id="@+id/tvLocation"
+        android:layout_width="106dp"
+        android:layout_height="23dp"
+        android:fontFamily="@font/dm_sans"
+        android:padding="2dp"
+        android:text="geo location"
+        android:textColor="#D2D2D2"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.098"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.278" />
+
+    <TextView
+        android:id="@+id/tvAlert"
+        android:layout_width="193dp"
+        android:layout_height="33dp"
+        android:fontFamily="@font/dm_sans"
+        android:padding="2dp"
+        android:text="When to Alert after arrival"
+        android:textColor="#D2D2D2"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.098"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.422" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/locationBtn"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:layout_margin="10dp"
+        android:backgroundTint="#D2D2D2"
+        android:ems="10"
+        android:fontFamily="@font/dm_sans"
+        android:padding="2dp"
+        android:text="CHOOSE YOUR LOCATION"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.169"
+        android:background="@drawable/rounded_corner"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/alertToneBtn"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/rounded_corner"
+        android:backgroundTint="#D2D2D2"
+        android:ems="10"
+        android:fontFamily="@font/dm_sans"
+        android:padding="2dp"
+        android:text="CHOOSE ALERT TONE"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.73" />
+
+    <EditText
+        android:id="@+id/searchBar"
+        android:layout_width="298dp"
+        android:layout_height="49dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/rounded_corner"
+        android:backgroundTint="#D4D4D4"
+        android:ems="10"
+        android:fontFamily="@font/dm_sans"
+        android:hint="search"
+        android:padding="10dp"
+        android:textAlignment="inherit"
+        android:textColor="#D2D2D2"
+        android:textColorHint="#00D2D2D2"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.051" />
+
+    <ImageButton
+        android:id="@+id/menuBtn"
+        android:layout_width="59dp"
+        android:layout_height="67dp"
+        android:backgroundTint="#1A1A1A"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.005"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.052"
+        app:srcCompat="@drawable/baseline_menu_24"
+        app:tint="#D4D4D4"
+        android:contentDescription="Menu Button" />
+
+
+    <ImageButton
+        android:id="@+id/searchBtn"
+        android:layout_width="54dp"
+        android:layout_height="52dp"
+        android:backgroundTint="#D4D4D4"
+        android:contentDescription="@android:string/search_go"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.834"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.064"
+        app:srcCompat="@drawable/baseline_search_24"
+        app:tint="#1A1A1A" />
+
+    <ImageButton
+        android:id="@+id/logout"
+        android:layout_width="49dp"
+        android:layout_height="58dp"
+        android:backgroundTint="#1A1A1A"
+        android:contentDescription="Logout Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.839"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.461"
+        app:srcCompat="@drawable/baseline_menu_24"
+        app:tint="#1A1A1A" />
+
+    <ImageButton
+        android:id="@+id/helpBtn"
+        android:layout_width="59dp"
+        android:layout_height="67dp"
+        android:backgroundTint="#1A1A1A"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.052"
+        app:srcCompat="@drawable/baseline_help_outline_24"
+        app:tint="#D4D4D4"
+        android:contentDescription="Help Button" />
+
+    <RadioGroup
+        android:layout_width="150dp"
+        android:layout_height="90dp"
+        app:layout_constraintBottom_toTopOf="@+id/navBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.19"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAlert"
+        app:layout_constraintVertical_bias="0.0">
+
+        <RadioButton
+            android:id="@+id/rBtn1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Immediately"
+            android:textColor="#D2D2D2"/>
+
+        <RadioButton
+            android:id="@+id/rBtn2"
+            android:layout_width="match_parent"
+            android:layout_height="61dp"
+            android:text="After passing"
+            android:textColor="#D2D2D2" />
+    </RadioGroup>
+
+    <CheckBox
+        android:id="@+id/cbOn"
+        android:layout_width="61dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="28dp"
+        android:text="ON"
+        android:textColor="#D2D2D2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/alertToneBtn"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/removeBtn"
+        android:layout_width="110dp"
+        android:layout_height="52dp"
+        android:layout_margin="10dp"
+        android:backgroundTint="#D2D2D2"
+        android:ems="10"
+        android:fontFamily="@font/dm_sans"
+        android:padding="2dp"
+        android:text="REMOVE"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.099"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.857" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/saveBtn"
+        android:layout_width="110dp"
+        android:layout_height="52dp"
+        android:layout_margin="10dp"
+        android:backgroundTint="#D2D2D2"
+        android:ems="10"
+        android:fontFamily="@font/dm_sans"
+        android:padding="2dp"
+        android:text="SAVE"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.897"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.857" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
