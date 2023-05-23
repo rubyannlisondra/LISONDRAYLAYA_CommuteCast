@@ -1,7 +1,9 @@
 package com.example.commutecast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.annotation.SuppressLint;
@@ -13,6 +15,7 @@ import android.widget.ImageButton;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
@@ -21,7 +24,9 @@ public class MainActivity extends AppCompatActivity {
     ViewPagerAdapter viewPagerAdapter;
     BottomNavigationView bottomNavigationView;
 
-    FirebaseAuth fAuth;
+    private Home homeFragment;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,10 +34,17 @@ public class MainActivity extends AppCompatActivity {
 
         getSupportActionBar().hide();
 
+        homeFragment = new Home();
+
         bottomNavigationView = findViewById(R.id.navBtn);
         viewPager2 = findViewById(R.id.viewPager);
         viewPagerAdapter = new ViewPagerAdapter(this);
         viewPager2.setAdapter(viewPagerAdapter);
+
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fragment_container, homeFragment)
+                .commit();
+
 
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @SuppressLint("NonConstantResourceId")
@@ -78,17 +90,5 @@ public class MainActivity extends AppCompatActivity {
                 super.onPageSelected(position);
             }
         });
-
-
-        fAuth = FirebaseAuth.getInstance();
-        /*ImageButton logout = findViewById(R.id.logout);
-
-        logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                fAuth.signOut();
-                startActivity(new Intent(getApplicationContext(),Login.class));
-            }
-        });*/
     }
 }
