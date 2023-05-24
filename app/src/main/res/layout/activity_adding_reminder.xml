@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#1A1A1A"
-    tools:context=".AddingReminder">
+    tools:context=".DataClass">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/Toolbar"
@@ -35,26 +35,6 @@
         app:layout_constraintTop_toTopOf="@+id/Toolbar"
         app:tint="#D4D4D4" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/selectLocBtn"
-        android:layout_width="350dp"
-        android:layout_height="60dp"
-        android:layout_margin="10dp"
-        android:background="@drawable/rounded_corner"
-        android:backgroundTint="#D2D2D2"
-        android:ems="10"
-        android:fontFamily="@font/dm_sans"
-        android:padding="2dp"
-        android:text="Open Location"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewLocation"
-        app:layout_constraintVertical_bias="0.044" />
-
     <TextView
         android:id="@+id/textViewName"
         android:layout_width="wrap_content"
@@ -63,109 +43,101 @@
         android:padding="2dp"
         android:text="Enter the Reminder's Name"
         android:textColor="#D2D2D2"
-        android:textSize="18sp"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.163"
+        app:layout_constraintHorizontal_bias="0.238"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Toolbar"
-        app:layout_constraintVertical_bias="0.169" />
+        app:layout_constraintVertical_bias="0.053" />
 
     <TextView
         android:id="@+id/textViewLocation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="12dp"
         android:fontFamily="@font/dm_sans"
         android:padding="2dp"
-        android:text="Location"
+        android:text="Your Location"
         android:textColor="#D2D2D2"
-        android:textSize="18sp"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.211"
+        app:layout_constraintHorizontal_bias="0.282"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tName" />
+        app:layout_constraintTop_toBottomOf="@+id/tName"
+        app:layout_constraintVertical_bias="0.007" />
 
     <ImageButton
         android:id="@+id/tvLocation"
-        android:layout_width="49dp"
-        android:layout_height="58dp"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
         android:backgroundTint="#00D2D2D2"
         android:contentDescription="none"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewLocation"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.082"
+        app:layout_constraintHorizontal_bias="0.146"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tName"
-        app:layout_constraintVertical_bias="0.033"
+        app:layout_constraintTop_toTopOf="@+id/textViewLocation"
         app:srcCompat="@drawable/baseline_location_on_24" />
-
-    <CheckBox
-        android:id="@+id/checkbox_alarm"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.871"
-        app:layout_constraintStart_toEndOf="@+id/textViewLocationAlarm"
-        app:layout_constraintTop_toBottomOf="@+id/selectLocBtn" />
 
     <ImageButton
         android:id="@+id/imageBtnAlarm"
-        android:layout_width="49dp"
-        android:layout_height="58dp"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
         android:backgroundTint="#00D2D2D2"
         android:contentDescription="none"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewLocationAlarm"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.082"
+        app:layout_constraintHorizontal_bias="0.146"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/selectLocBtn"
-        app:layout_constraintVertical_bias="0.032"
+        app:layout_constraintTop_toTopOf="@+id/textViewLocationAlarm"
         app:srcCompat="@drawable/baseline_add_alert_24"
         app:tint="#D2D2D2" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/createReminderBtn"
-        android:layout_width="279dp"
-        android:layout_height="58dp"
+        android:layout_width="170dp"
+        android:layout_height="50dp"
         android:layout_margin="10dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/rounded_corner"
         android:backgroundTint="#D2D2D2"
         android:ems="10"
         android:fontFamily="@font/dm_sans"
         android:padding="2dp"
-        android:text="Create Reminder"
+        android:text="SAVE REMINDER"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/selectLocBtn"
-        app:layout_constraintVertical_bias="0.303" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewLocationAlarm"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textViewLocationAlarm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/dm_sans"
         android:padding="2dp"
         android:text="Alarm"
         android:textColor="#D2D2D2"
-        android:textSize="18sp"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.197"
+        app:layout_constraintHorizontal_bias="0.243"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/selectLocBtn"
-        app:layout_constraintVertical_bias="0.073" />
+        app:layout_constraintTop_toBottomOf="@+id/tLocation"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/tName"
-        android:layout_width="350dp"
+        android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_margin="10dp"
-        android:layout_marginTop="16dp"
         android:background="@drawable/rounded_corner"
         android:backgroundTint="#60D2D2D2"
         android:elegantTextHeight="false"
@@ -178,9 +150,35 @@
         android:textColor="#D2D2D2"
         android:textColorHint="#00D2D2D2"
         android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewName" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewName"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/tLocation"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/rounded_corner"
+        android:backgroundTint="#60D2D2D2"
+        android:elegantTextHeight="false"
+        android:ems="10"
+        android:fontFamily="@font/dm_sans"
+        android:hint="name"
+        android:inputType="textPersonName"
+        android:padding="10dp"
+        android:textAlignment="textStart"
+        android:textColor="#D2D2D2"
+        android:textColorHint="#00D2D2D2"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewLocation"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

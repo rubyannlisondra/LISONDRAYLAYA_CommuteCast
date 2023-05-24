@@ -40,7 +40,7 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/changePassword"
-        android:layout_width="363dp"
+        android:layout_width="340dp"
         android:layout_height="64dp"
         android:layout_gravity="start"
         android:layout_marginTop="16dp"
@@ -57,36 +57,37 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView3"
         app:layout_constraintVertical_bias="0.0" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/LightMode"
-        android:layout_width="363dp"
+        android:layout_width="340dp"
         android:layout_height="64dp"
         android:layout_gravity="start"
         android:background="@drawable/rounded_corner"
         android:backgroundTint="#60D2D2D2"
         android:drawableLeft="@drawable/baseline_dark_mode_24"
-        android:drawableRight="@drawable/baseline_keyboard_arrow_right_24"
         android:drawablePadding="20dp"
         android:fontFamily="@font/dm_sans"
         android:gravity="center_vertical|start"
         android:padding="15dp"
         android:text="Theme"
+
         android:textAllCaps="false"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/changePassword"
-        app:layout_constraintVertical_bias="0.128" />
+        app:layout_constraintVertical_bias="0.126" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/logout"
-        android:layout_width="363dp"
+        android:layout_width="340dp"
         android:layout_height="64dp"
         android:layout_gravity="start"
         android:background="@drawable/rounded_corner"
@@ -101,10 +102,21 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/LightMode"
-        app:layout_constraintVertical_bias="0.209" />
+        app:layout_constraintVertical_bias="0.195" />
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/LightMode"
+        app:layout_constraintEnd_toEndOf="@+id/LightMode"
+        app:layout_constraintHorizontal_bias="0.925"
+        app:layout_constraintStart_toStartOf="@+id/LightMode"
+        app:layout_constraintTop_toTopOf="@+id/LightMode"
+        app:layout_constraintVertical_bias="0.486" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
