@@ -25,29 +25,13 @@ import android.widget.TimePicker;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
-public class AddingReminder extends AppCompatActivity implements TimePickerDialog.OnTimeSetListener {
+public class AddingReminder extends AppCompatActivity {
 
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adding_reminder);
         getSupportActionBar().hide();
-
-        ImageButton buttonTimePicker = findViewById(R.id.imageBtnAlarm);
-        buttonTimePicker.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                DialogFragment timePicker = new TimePickerFragment();
-                timePicker.show(getSupportFragmentManager(), "time picker");
-            }
-        });
-
-    }
-
-    @Override
-    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-        TextView textView = (TextView) findViewById(R.id.textViewLocationAlarm);
-        textView.setText("Hour: " + hourOfDay + " Minute: " + minute);
 
     }
 }

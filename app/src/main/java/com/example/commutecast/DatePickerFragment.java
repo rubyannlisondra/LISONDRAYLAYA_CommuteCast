@@ -1,9 +1,9 @@
 package com.example.commutecast;
 
+import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.TimePickerDialog;
 import android.os.Bundle;
-import android.text.format.DateFormat;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -11,20 +11,22 @@ import androidx.fragment.app.DialogFragment;
 
 import java.util.Calendar;
 
-public class TimePickerFragment extends DialogFragment {
+public class DatePickerFragment extends DialogFragment {
 
-    private TimePickerDialog.OnTimeSetListener listener;
+    private DatePickerDialog.OnDateSetListener listener;
 
-    public TimePickerFragment(TimePickerDialog.OnTimeSetListener listener) {
+    public DatePickerFragment(DatePickerDialog.OnDateSetListener listener) {
         this.listener = listener;
     }
+
 
     @NonNull
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
         Calendar c = Calendar.getInstance();
-        int hour = c.get(Calendar.HOUR_OF_DAY);
-        int minute = c.get(Calendar.MINUTE);
-        return new TimePickerDialog(getActivity(), listener, hour, minute, DateFormat.is24HourFormat(getActivity()));
+        int year = c.get(Calendar.YEAR);
+        int month = c.get(Calendar.MONTH);
+        int day = c.get(Calendar.DAY_OF_MONTH);
+        return new DatePickerDialog(getActivity(), listener, year, month, day);
     }
 }

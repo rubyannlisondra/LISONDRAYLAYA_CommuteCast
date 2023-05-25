@@ -2,6 +2,7 @@ package com.example.commutecast;
 
 public class ToDoModel extends TaskId {
     private String task;
+    private String date;
     private String alarm;
     private String location;
     private int status;
@@ -21,5 +22,9 @@ public class ToDoModel extends TaskId {
 
     public String getLocation() {
         return location;
+    }
+
+    public String getDate() {
+        return date;
     }
 }

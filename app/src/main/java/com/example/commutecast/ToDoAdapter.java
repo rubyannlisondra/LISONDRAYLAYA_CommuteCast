@@ -38,23 +38,8 @@ public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.MyViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         ToDoModel toDoModel = todoList.get(position);
-        holder.mCheckBox.setText(toDoModel.getTask());
         holder.mAlarm.setText(toDoModel.getAlarm());
         holder.mLocation.setText(toDoModel.getLocation());
-
-        holder.mCheckBox.setChecked(toBoolean(toDoModel.getStatus()));
-
-        holder.mCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
-                if(isChecked) {
-                    firestore.collection("task").document(toDoModel.TaskId).update("status", 1);
-                }
-                else {
-                    firestore.collection("task").document(toDoModel.TaskId).update("status", 0);
-                }
-            }
-        });
     }
 
     private boolean toBoolean(int status) {
@@ -75,9 +60,8 @@ public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.MyViewHolder> 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            mAlarm = itemView.findViewById(R.id.alarm_tv);
-            mCheckBox = itemView.findViewById(R.id.mcheckbox);
-            mLocation = itemView.findViewById(R.id.location_tv);
+            mAlarm = itemView.findViewById(R.id.recycle_date_time);
+            mLocation = itemView.findViewById(R.id.recycle_location);
 
         }
     }
