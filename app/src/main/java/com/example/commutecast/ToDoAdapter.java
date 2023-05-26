@@ -38,8 +38,22 @@ public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.MyViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         ToDoModel toDoModel = todoList.get(position);
-        holder.mAlarm.setText(toDoModel.getAlarm());
+        holder.mCheckBox.setText(toDoModel.getTask());
+        holder.mDue.setText("Date: " + toDoModel.getDate());
         holder.mLocation.setText(toDoModel.getLocation());
+
+        holder.mCheckBox.setChecked(toBoolean(toDoModel.getStatus()));
+        holder.mCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                if(isChecked) {
+                    firestore.collection("tasks").document(toDoModel.TaskId).update("status", 1);
+                }
+                else {
+                    firestore.collection("tasks").document(toDoModel.TaskId).update("status", 0);
+                }
+            }
+        });
     }
 
     private boolean toBoolean(int status) {
@@ -54,15 +68,15 @@ public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.MyViewHolder> 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
         TextView mLocation;
-        TextView mAlarm;
+        TextView mDue;
         CheckBox mCheckBox;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            mAlarm = itemView.findViewById(R.id.recycle_date_time);
+            mDue = itemView.findViewById(R.id.recycle_date);
             mLocation = itemView.findViewById(R.id.recycle_location);
-
+            mCheckBox = itemView.findViewById(R.id.thumbnail_image);
         }
     }
 }

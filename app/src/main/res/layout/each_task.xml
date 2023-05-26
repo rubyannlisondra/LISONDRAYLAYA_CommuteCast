@@ -6,14 +6,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="?android:attr/selectableItemBackground"
     >
-    
-    <ImageView
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/thumbnail_image"
+        android:layout_width="98dp"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:layout_centerVertical="true"
-        android:id="@+id/thumbnail_image"/>
+        android:fontFamily="@font/dm_sans"
+        android:textSize="18sp"
+        android:textColor="#D2D2D2"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -28,17 +31,6 @@
         tools:ignore="UnknownId">
 
         <TextView
-            android:id="@+id/recycle_title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ellipsize="end"
-            android:fontFamily="@font/dm_sans"
-            android:maxLines="2"
-            android:textColor="#D2D2D2"
-            android:textSize="20sp"
-            tools:text="Title" />
-
-        <TextView
                 android:id="@+id/recycle_location"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -48,13 +40,13 @@
                 tools:text="Location" />
 
         <TextView
-                android:id="@+id/recycle_date_time"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ellipsize="marquee"
-                android:text="true"
-                android:textColor="#D2D2D2"
-                tools:text="Date and Time" />
+            android:id="@+id/recycle_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="marquee"
+            android:text="true"
+            android:textColor="#D2D2D2"
+            tools:text="Date" />
     </LinearLayout>
 
 </RelativeLayout>

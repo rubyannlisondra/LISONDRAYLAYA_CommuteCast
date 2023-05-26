@@ -16,6 +16,7 @@ import androidx.loader.content.Loader;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,6 +42,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 
 
 public class Home extends Fragment {
@@ -79,19 +81,39 @@ public class Home extends Fragment {
     }
 
     private void showData() {
-        firestore.collection("task").addSnapshotListener(new EventListener<QuerySnapshot>() {
+        firestore.collection("tasks").addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
-                for(DocumentChange documentChange : value.getDocumentChanges()) {
-                    if(documentChange.getType() == DocumentChange.Type.ADDED) {
-                        String id = documentChange.getDocument().getId();
-                        ToDoModel toDoModel = documentChange.getDocument().toObject(ToDoModel.class).withId(id);
+                if (value != null) {
+                    for (DocumentChange documentChange : value.getDocumentChanges()) {
+                        if (documentChange.getType() == DocumentChange.Type.ADDED) {
+                            String id = documentChange.getDocument().getId();
+                            Map<String, Object> data = documentChange.getDocument().getData();
+                            String task = (String) data.get("task");
+                            String location = (String) data.get("location");
+                            // Retrieve other fields as needed
 
-                        mList.add(toDoModel);
-                        adapter.notifyDataSetChanged();
+                            ToDoModel toDoModel = new ToDoModel();
+                            toDoModel.setId(id);
+                            toDoModel.setTask(task);
+                            toDoModel.setLocation(location);
+                            // Set other fields as needed
+
+                            mList.add(toDoModel);
+                            Log.d("FirestoreData", "Task: " + toDoModel.getTask() + ", Location: " + toDoModel.getLocation());
+                        }
                     }
                 }
                 Collections.reverse(mList);
+                MainActivity activity = (MainActivity) requireActivity();
+                if (activity != null) {
+                    activity.runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            adapter.notifyDataSetChanged();
+                        }
+                    });
+                }
             }
         });
     }
