@@ -131,7 +131,7 @@ public class DataClass extends BottomSheetDialogFragment implements TimePickerDi
                     taskMap.put("location", yourLocation);
                     taskMap.put("status", 0);
 
-                    firestore.collection("task").add(taskMap).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
+                    firestore.collection("tasks").add(taskMap).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
                         @Override
                         public void onComplete(@NonNull Task<DocumentReference> task) {
                             if(task.isSuccessful()) {

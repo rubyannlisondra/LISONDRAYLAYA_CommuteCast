@@ -91,12 +91,14 @@ public class Home extends Fragment {
                             Map<String, Object> data = documentChange.getDocument().getData();
                             String task = (String) data.get("task");
                             String location = (String) data.get("location");
+                            String date = (String) data.get("date");
                             // Retrieve other fields as needed
 
                             ToDoModel toDoModel = new ToDoModel();
                             toDoModel.setId(id);
                             toDoModel.setTask(task);
                             toDoModel.setLocation(location);
+                            toDoModel.setDate(date);
                             // Set other fields as needed
 
                             mList.add(toDoModel);
